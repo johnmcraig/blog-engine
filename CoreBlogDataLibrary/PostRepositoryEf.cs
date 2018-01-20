@@ -50,6 +50,7 @@ namespace CoreBlogDataLibrary
         public List<Post> ListAllPosts()
         {
             return _dbContext.Posts
+               .Include(p => p.PostAuthor)
               .ToList();
  
         }
