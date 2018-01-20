@@ -17,9 +17,7 @@ namespace CoreBlogDataLibrary
         [DataType(DataType.Date)]
         public DateTime PublishDate { get; set; }
         public int PostId { get; set; }
-        
-        public string Content { get; set; }
-
+       
         // Navigation Properties
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
