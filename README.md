@@ -9,5 +9,5 @@ This application is a CMS as a blog engine that allows data to be saved to a SQL
 ## Tools Used
 
 The application was built with:
-  1. C#, ASP>NET Core 2.0.3
+  1. C#, ASP.NET Core 2.0.3
   2. SQL - mainly MSSQL through Visual Studio
