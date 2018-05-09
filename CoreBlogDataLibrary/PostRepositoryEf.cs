@@ -37,7 +37,8 @@ namespace CoreBlogDataLibrary
 
         public Post GetByPermalink(string permalink)
         {
-            return _dbContext.Posts.Where(p => p.Permalink == permalink)
+            return _dbContext.Posts
+                .Where(p => p.Permalink == permalink)
                 .FirstOrDefault();
             
         }
@@ -57,7 +58,7 @@ namespace CoreBlogDataLibrary
 
         public void UpdatePost(Post updatePost)
         {
-            _dbContext.Entry<Post>(updatePost).State = EntityState.Modified;
+            _dbContext.Entry(updatePost).State = EntityState.Modified;
             _dbContext.SaveChanges();
 
         }
