@@ -75,7 +75,7 @@ namespace WebBlog.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View(newPost);
             }
