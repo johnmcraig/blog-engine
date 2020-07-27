@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using CoreBlogDataLibrary.Data;
 using CoreBlogDataLibrary.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 namespace WebBlog.Controllers
 {
@@ -15,10 +16,12 @@ namespace WebBlog.Controllers
     {
         private readonly IPostRepository _postRepo; /*= new PostRepositoryFs();*/
         private readonly IAuthorRepository _authorRepo; /*= new AuthorRepositoryFs();*/
+        private readonly ILogger<PostController> _logger;
 
-        public PostController(IPostRepository postRepo, IAuthorRepository authorRepo)
+        public PostController(IPostRepository postRepo, IAuthorRepository authorRepo, ILogger<PostController> logger)
         {
             _authorRepo = authorRepo;
+            _logger = logger;
             _postRepo = postRepo; 
         }
         // GET: Post
@@ -74,7 +77,6 @@ namespace WebBlog.Controllers
             }
             catch (Exception ex)
             {
-
                 return View(newPost);
             }
         }
@@ -96,7 +98,7 @@ namespace WebBlog.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
