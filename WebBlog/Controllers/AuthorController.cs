@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CoreBlogDataLibrary;
+using CoreBlogDataLibrary.Data;
+using CoreBlogDataLibrary.Entities;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebBlog.Controllers
@@ -22,7 +23,7 @@ namespace WebBlog.Controllers
         // GET: Author
         public ActionResult Index()
         {
-            return View(_authorRepo.List());
+            return View(_authorRepo.ListAllAuthors());
         }
 
         // GET: Author/Details/5

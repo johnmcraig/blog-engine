@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CoreBlogDataLibrary.Entities;
 
-namespace CoreBlogDataLibrary
+namespace CoreBlogDataLibrary.Data
 {
      public class AuthorRepositoryEf : IAuthorRepository
     {
@@ -18,20 +19,17 @@ namespace CoreBlogDataLibrary
         {   
             _dbContext.Authors.Add(newAuthor);
             _dbContext.SaveChanges();
-            
         }
 
         public Author GetById(int id)
         {
             return _dbContext.Authors.Find(id);
-
         }
 
-        public List<Author> List()
+        public List<Author> ListAllAuthors()
         {
             return _dbContext.Authors
-                .ToList();
-            
+                .ToList();   
         }
     }
 }

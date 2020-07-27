@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using CoreBlogDataLibrary.Entities;
 
-namespace CoreBlogDataLibrary
+namespace CoreBlogDataLibrary.Data
 {
      public class PostRepositoryEf : IPostRepository
     {

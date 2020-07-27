@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using CoreBlogDataLibrary.Entities;
 
-namespace CoreBlogDataLibrary
+namespace CoreBlogDataLibrary.Data
 {
     public interface IPostRepository
     {

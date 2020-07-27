@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace CoreBlogDataLibrary
+namespace CoreBlogDataLibrary.Entities
 {
     public class Author
     {   
